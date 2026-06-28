@@ -14,7 +14,7 @@ export default function BlogCard({ activity }) {
 
   return (
     <article className={styles.card}>
-      <div className={styles.accent} style={{ background: accentColor }} />
+      <div className={styles.accent} style={{ background: accentColor, boxShadow: `2px 0 12px ${accentColor}55` }} />
       <div className={styles.body}>
         <div className={styles.top}>
           <span className={styles.emoji}>{emoji}</span>
