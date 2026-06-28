@@ -13,7 +13,7 @@ export default function About() {
         <div className={styles.introText}>
           <h1 className={styles.title}>About me</h1>
           <p className={styles.bio}>{profile.bio}</p>
-          <p className={styles.location}>📍 {profile.location}</p>
+          <p className={styles.location}>{profile.location}</p>
           <div className={styles.ctas}>
             <Button href={`mailto:${profile.email}`} size="md">
               Say hello
