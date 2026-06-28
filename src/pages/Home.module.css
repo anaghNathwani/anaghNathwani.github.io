@@ -110,13 +110,128 @@
 }
 
 
-/* ── Projects grid ── */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1px;
-  background: var(--border);
+/* ── Featured projects list ── */
+.featuredList {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--border);
+}
+
+.featuredItem {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuredItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-color, var(--accent));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.featuredItem:last-child {
+  border-bottom: none;
+}
+
+.featuredItem:hover {
+  background: var(--bg2);
+}
+
+.featuredItem:hover::before {
+  opacity: 1;
+}
+
+.featuredIndex {
+  font-family: var(--heading);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-soft);
+  padding: 28px 0 28px 28px;
+  line-height: 1;
+  transition: color 0.2s;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 32px;
+}
+
+.featuredItem:hover .featuredIndex {
+  color: var(--accent);
+}
+
+.featuredBody {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featuredTitle {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-h);
+  margin: 0;
+  line-height: 1.2;
+  transition: color 0.15s;
+}
+
+.featuredItem:hover .featuredTitle {
+  color: var(--accent2);
+}
+
+.featuredDesc {
+  font-size: 13.5px;
+  line-height: 165%;
+  color: var(--text);
+  margin: 0;
+}
+
+.featuredMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.featuredTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.featuredLinks {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.featuredLink {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.featuredLink:hover {
+  color: var(--accent);
 }
 
 .allLink {

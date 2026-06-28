@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PageLayout from "../components/PageLayout";
 import Section from "../components/Section";
-import ProjectCard from "../components/ProjectCard";
+import Badge from "../components/Badge";
 import Button from "../components/Button";
 import { profile } from "../data/profile";
 import { projects } from "../data/projects";
@@ -41,9 +41,24 @@ export default function Home() {
 
       {/* ── Featured Projects ── */}
       <Section title="Featured Projects" id="projects">
-        <div className={styles.grid}>
-          {featured.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div className={styles.featuredList}>
+          {featured.map((project, i) => (
+            <div key={project.id} className={styles.featuredItem} style={{ '--accent-color': project.accentColor }}>
+              <span className={styles.featuredIndex}>0{i + 1}</span>
+              <div className={styles.featuredBody}>
+                <h3 className={styles.featuredTitle}>{project.title}</h3>
+                <p className={styles.featuredDesc}>{project.description}</p>
+                <div className={styles.featuredMeta}>
+                  <div className={styles.featuredTags}>
+                    {project.tags.map(t => <Badge key={t}>{t}</Badge>)}
+                  </div>
+                  <div className={styles.featuredLinks}>
+                    {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.featuredLink}>GitHub →</a>}
+                    {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer" className={styles.featuredLink}>Live →</a>}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
         <div className={styles.allLink}>
