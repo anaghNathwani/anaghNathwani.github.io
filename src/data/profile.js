@@ -1,8 +1,8 @@
 export const profile = {
   name: "Anagh Nathwani",
   title: "Cool guy",
-  tagline: "Building things designed for the future.",
-  bio: `I'm a freshman in highschool who appreciates the art of expressing data on computers. 
+  tagline: "I build software that's clean, fast, and built to last.",
+  bio: `I'm a freshman in high school who appreciates the art of expressing data on computers. 
 I care about clean code, good abstractions, and shipping things that actually work.
 When I'm not coding, you'll find me reading, hiking, or tinkering with side projects.`,
   location: "some City, some country",
@@ -19,7 +19,7 @@ When I'm not coding, you'll find me reading, hiking, or tinkering with side proj
       role: "Middle School Student",
       company: "Middle School",
       period: "2023 – 2025",
-      description: "Studied core subjects succh as math, science, and literautre.",
+      description: "Studied core subjects such as math, science, and literature.",
     },
     {
       role: "High School Student",

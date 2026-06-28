@@ -20,7 +20,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <article className={styles.card}>
-      <div className={styles.accent} style={{ background: accentColor }} />
+      <div className={styles.accent} style={{ background: accentColor, boxShadow: `2px 0 12px ${accentColor}55` }} />
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>

@@ -24,9 +24,10 @@ export default function Home() {
         <div className={styles.heroDots} aria-hidden />
         <div className={styles.heroGlow} aria-hidden />
         <div className={styles.heroInner}>
-          <p className={styles.greeting}>Hey, I'm</p>
-          <h1 className={styles.name}>{profile.name}</h1>
-          <p className={styles.subtitle}>{profile.tagline}</p>
+          <p className={styles.greeting}>Hey, I&apos;m</p>
+          <h1 className={styles.name}>
+            <span className={styles.nameBold}>{profile.name}</span>
+          </h1>
           <div className={styles.ctas}>
             <Button href="/projects" size="lg">
               View my work <ArrowRight />

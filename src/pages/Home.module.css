@@ -1,19 +1,20 @@
 /* ── Hero ── */
 .hero {
   position: relative;
-  padding: 112px 48px 88px;
+  padding: 120px 48px 100px;
   text-align: left;
   overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 
 .heroInner {
   position: relative;
   z-index: 1;
-  max-width: 640px;
-  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  max-width: 720px;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
-/* Gradient orbs */
+/* Ambient glow orbs */
 .heroGlow {
   position: absolute;
   inset: 0;
@@ -24,120 +25,129 @@
 .heroGlow::before {
   content: '';
   position: absolute;
-  top: -100px;
-  right: -60px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle at center, rgba(147, 51, 234, 0.12) 0%, transparent 65%);
-  animation: float 8s ease-in-out infinite;
+  top: -80px;
+  right: -100px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle at center, rgba(201, 145, 42, 0.07) 0%, transparent 60%);
+  animation: float 10s ease-in-out infinite;
 }
 
 .heroGlow::after {
   content: '';
   position: absolute;
-  top: 40px;
-  right: 180px;
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle at center, rgba(236, 72, 153, 0.08) 0%, transparent 65%);
-  animation: float 11s ease-in-out infinite reverse;
+  bottom: -60px;
+  left: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at center, rgba(201, 145, 42, 0.04) 0%, transparent 60%);
+  animation: float 14s ease-in-out infinite reverse;
 }
 
-/* Dot grid */
+/* Dot grid — faint */
 .heroDots {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 80% 100% at 80% 40%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 100% at 80% 40%, black 20%, transparent 80%);
-  opacity: 0.6;
+  background-image: radial-gradient(circle, var(--border-light) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 90% 100% at 90% 50%, black 10%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 100% at 90% 50%, black 10%, transparent 75%);
+  opacity: 0.5;
+}
+
+/* Decorative vertical rule */
+.hero::before {
+  content: '';
+  position: absolute;
+  left: 48px;
+  top: 120px;
+  bottom: 100px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--accent-dim) 30%, var(--accent-dim) 70%, transparent);
+  opacity: 0.4;
 }
 
 .greeting {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 12px;
   font-family: var(--mono);
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--accent);
+  margin: 0 0 20px 0;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.greeting::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1.5px;
-  background: var(--accent);
-  border-radius: 2px;
+  padding-left: 28px;
 }
 
 .name {
-  font-size: clamp(36px, 5.5vw, 64px);
-  font-weight: 800;
-  letter-spacing: -2px;
-  line-height: 1.0;
-  margin: 0 0 20px;
-  background: linear-gradient(135deg, var(--text-h) 0%, var(--text-h) 50%, var(--accent) 100%);
+  font-family: var(--heading);
+  font-size: clamp(52px, 8vw, 112px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -1px;
+  line-height: 0.95;
+  margin: 0 0 36px;
+  color: var(--text-h);
+}
+
+
+.nameBold {
+  font-weight: 600;
+  font-style: normal;
+  display: block;
+  background: linear-gradient(135deg, var(--text-h) 0%, var(--accent2) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
-  font-size: 20px;
-  color: var(--text);
-  margin: 0 0 40px;
-  line-height: 160%;
-  max-width: 480px;
-  font-weight: 400;
-}
-
 .ctas {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
+  padding-left: 28px;
 }
+
 
 /* ── Projects grid ── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
 }
 
 .allLink {
-  margin-top: 32px;
+  margin-top: 40px;
   text-align: center;
 }
 
 .viewAll {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--accent);
   text-decoration: none;
-  transition: gap 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  letter-spacing: 0.02em;
+  transition: gap 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.15s;
 }
 
 .viewAll:hover {
-  gap: 12px;
+  gap: 16px;
+  color: var(--accent2);
 }
 
 /* ── About snippet ── */
 .aboutSnippet {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 48px;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
   align-items: start;
   text-align: left;
 }
@@ -147,25 +157,26 @@
   line-height: 175%;
   color: var(--text);
   white-space: pre-line;
-  margin: 0 0 28px;
+  margin: 0 0 32px;
+  font-family: var(--heading);
+  font-weight: 300;
+  font-size: 22px;
 }
 
 .aboutCtas {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .quickSkills {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 24px;
+  gap: 20px;
+  padding: 28px;
   background: var(--code-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  border: 1px solid var(--border-light);
   position: relative;
-  overflow: hidden;
 }
 
 .quickSkills::before {
@@ -173,23 +184,22 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  border-radius: 14px 14px 0 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dim));
 }
 
 .skillGroup {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .skillCategory {
   font-family: var(--mono);
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -197,7 +207,8 @@
 .skillItems {
   font-size: 14px;
   color: var(--text-h);
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 145%;
 }
 
 @media (max-width: 900px) {
@@ -208,9 +219,20 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 72px 24px 60px;
+    padding: 80px 24px 72px;
+  }
+  .hero::before {
+    left: 24px;
+    top: 80px;
+    bottom: 72px;
   }
   .name {
-    letter-spacing: -1.5px;
+    font-size: clamp(44px, 12vw, 80px);
+  }
+  .ctas {
+    padding-left: 0;
+  }
+  .greeting {
+    padding-left: 0;
   }
 }
