@@ -3,6 +3,7 @@ import PageLayout from "../components/PageLayout";
 import Section from "../components/Section";
 import Badge from "../components/Badge";
 import Button from "../components/Button";
+import HeroScene from "../components/HeroScene";
 import { profile } from "../data/profile";
 import { projects } from "../data/projects";
 import styles from "./Home.module.css";
@@ -21,6 +22,7 @@ export default function Home() {
     <PageLayout>
       {/* ── Hero ── */}
       <div className={styles.hero}>
+        <HeroScene />
         <div className={styles.heroDots} aria-hidden />
         <div className={styles.heroGlow} aria-hidden />
         <div className={styles.heroInner}>

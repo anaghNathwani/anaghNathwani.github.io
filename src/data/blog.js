@@ -90,127 +90,61 @@ export const activities = [
     accentColor: "#f97316",
     link: "https://vimeo.com/697564390?turnstile=1.mpYtCdKebmv226kazuDz-fvO8g1Z1tzbtA4dg792ZLdATWm0MHjIap_x7GuGIKNzZZu8yD0ETmk8240hb0EKHqNeYAm5grX2zqXlZOA0f6ROn-FG-M_nrUBN0pz_4u7SAnE4SZybBS9FfO_-_DYYZlcPYUw9awFYkXzbcvsvG0S-548-dsPFg6uwksvopMaXcuESWjNPWpJSKMHV7O5CgUiwAa7YApMyK1lUJpQ1WhIcQoBp1okd4w7iyzIyulFcdpWXX-6OIo4vpnn0aiH0JddNXPuYpLACUgaAxEofyhrhxz18AeWGkU3LYHrPFqV38EZyq_SvynhjBhJ675jP2JOhUBaQ3wFA7U9eD-h7FL7jfXRlTCNdUh7zySyqXY8gha5V3qTF51O_eJEyrZw8aNEKnGR34RWmhAXmJOooCTZysteeynENJ7Zt0igPs3QaVIWGb-cknJD9LM_0UMR6gW7_jFK2gCy4d-iv2wNau3yb0UfDgDhtlNB_8KHKChr_zZZwqAlBl8CIejUxDhTJYRSe3ngDIccEg2yBrPcil1M43Jal0q3xUfn4CSttRq5FW3qJtYeHrNvnOW7b2fwDoDWmMNLyFrd2BYongB8yHqceFOA8Dv45dDm3ZZpInmz1VchvIBfLpp7ciZAVDexetw.I2rPTyd9gvSkIAPanls44Q.06eabf58173232b1d2abc80b092233440416552e58b707d6938b874ab74a9108",
   },
-  /*
+  
   {
     id: 10,
-    emoji: "🖨️",
-    title: "3D printed a custom desk organizer",
+    emoji: "🍀",
+    title: "Below Sea Level",
     description:
-      "Designed a modular desk organizer in Fusion 360 and printed it over two days. Lots of failed prints due to warping, but the final version fits perfectly. There's nothing like using something you made from scratch.",
-    tags: ["Tech", "Creative"],
-    date: "Jun 2025",
+      "I visited Badwater Basin, the lowest point in North America at 282 feet below sea level. It looked like a beach without an ocean, with shallow, extremely salty water. The sharp salt crystals made walking barefoot a painful lesson, but the experience felt unreal.",
+    tags: ["Straight Up Unreal"],
+    date: "Dec 2025",
     accentColor: "#84cc16",
     link: null,
-    },
+  },
   {
     id: 11,
-    emoji: "🎸",
-    title: "Learned Smoke on the Water",
+    emoji: "🍀",
+    title: "Living light in the oceans",
     description:
-      "Classic beginner riff, but it sounds satisfying every single time. Been playing guitar on and off for a year — my fingertips are finally callused enough that it doesn't hurt to practice for an hour straight.",
-    tags: ["Music", "Creative"],
+      "I got to watch bioluminescence in the Pacific Ocean, caused by microscopic plankton. These organisms produce light through a chemical reaction when disturbed by waves or movement, making the ocean glow bright blue at night.",
+    tags: ["Straight Up Unreal"],
     date: "May 2025",
     accentColor: "#fbbf24",
     link: null,
   },
+  
   {
     id: 12,
-    emoji: "🍜",
-    title: "Made homemade ramen from scratch",
+    emoji: "🍀",
+    title: "Jupiter and Saturn: Just my eyes",
     description:
-      "Broth simmered for eight hours. Made the noodles by hand. Soft-boiled eggs marinated overnight. It took basically an entire day but the result was genuinely restaurant-quality. Totally worth the mess.",
-    tags: ["Food"],
-    date: "Apr 2025",
+      "During my time in Cambridge, Ma I was lucky enough to be able to see both Jupiter and Saturn, at the same time, with just my eyes! The cold air stung my skin, every part of the experiance was worth it.", 
+    tags: ["Straight Up Unreal"],
+    date: "~2021",
     accentColor: "#ef4444",
     link: null,
   },
   {
     id: 13,
-    emoji: "🏃",
-    title: "Ran my first 5K",
+    emoji: "🍀",
+    title: "A Once-in-a-Lifetime Bloom",
     description:
-      "Signed up on a whim, trained for three weeks, ran 5km without stopping. Finished in 27 minutes which isn't fast but it was my first race and I crossed the line which is what mattered.",
-    tags: ["Sports"],
+      "Watching the corpse flower bloom at the San Diego Botanic Garden was a once-in-a-lifetime thrill. As the huge petals slowly opened, I felt pure awe—like, actually unreal. Knowing this rare moment might never happen again made it feel low-key iconic, like nature dropping a secret just for us.",
+    tags: ["Straight Up Unreal"],
     date: "Mar 2025",
     accentColor: "#10b981",
     link: null,
   },
   {
     id: 14,
-    emoji: "🎲",
-    title: "Board game night",
+    emoji: "🍀",
+    title: "NASA Artemis mission boarding pass",
     description:
-      "Played Wingspan and Catan back-to-back with a group of friends. Wingspan is a beautiful game — strategy hidden inside what looks like a cozy bird-watching simulator. Lost both games but had a great time.",
-    tags: ["Social", "Gaming"],
+      "Fun fact: my name is going to space 🚀 I submitted it for NASA’s Artemis II mission, and it will travel around the Moon in 2026. Knowing my name will fly beyond Earth feels exciting, unreal, and like a once-in-a-lifetime moment.",
+    tags: ["Straight Up Unreal"],
     date: "Feb 2025",
     accentColor: "#6366f1",
     link: null,
   },
-  {
-    id: 15,
-    emoji: "🔭",
-    title: "Stargazing session",
-    description:
-      "Drove out to a dark sky spot with a borrowed telescope. Saw Saturn's rings for the first time with my own eyes — it looks fake, like a sticker on the eyepiece. Stayed out until 2am and my neck paid for it.",
-    tags: ["Science", "Outdoor"],
-    date: "Jan 2025",
-    accentColor: "#1e40af",
-    link: null,
-  },
-  {
-    id: 16,
-    emoji: "✏️",
-    title: "Finished a sketchbook",
-    description:
-      "Filled an entire 80-page sketchbook over the course of six months. Portraits, cityscapes, random objects on my desk. The difference between page 1 and page 80 is kind of wild — I can actually see myself getting better.",
-    tags: ["Creative"],
-    date: "Dec 2024",
-    accentColor: "#d946ef",
-    link: null,
-  },
-  {
-    id: 17,
-    emoji: "🦀",
-    title: "Started learning Rust",
-    description:
-      "The borrow checker humbled me instantly. Spent two weeks fighting the compiler before it clicked. Rust forces you to think about memory in a way that made me a better programmer in every other language too.",
-    tags: ["Tech"],
-    date: "Nov 2024",
-    accentColor: "#f97316",
-    link: null,
-  },
-  {
-    id: 18,
-    emoji: "🤖",
-    title: "Built a line-following robot",
-    description:
-      "Used an Arduino, two IR sensors, and a motor driver shield. The first version spun in circles. The second version drove off the table. The third version actually followed the line. Progress.",
-    tags: ["Tech", "Science"],
-    date: "Oct 2024",
-    accentColor: "#0ea5e9",
-    link: null,
-  },
-  {
-    id: 19,
-    emoji: "🏊",
-    title: "Swam 2km without stopping",
-    description:
-      "Set a personal goal to swim 80 laps (2km) continuously. Took three months of early morning practice to get there. The mental game of counting laps while exhausted is its own kind of challenge.",
-    tags: ["Sports"],
-    date: "Sep 2024",
-    accentColor: "#06b6d4",
-    link: null,
-    }, */
-  /*
-  {
-    id: 20,
-    emoji: "🎬",
-    title: "Watched all of 2001: A Space Odyssey",
-    description:
-      "Finally sat down and watched it properly — no phone, lights off. HAL 9000 is genuinely terrifying. The ending still makes no sense to me but I've thought about it every day since. That's probably the point.",
-    tags: ["Creative", "Social"],
-    date: "Aug 2024",
-    accentColor: "#9ca3af",
-    link: null,
-  },*/
 ];
