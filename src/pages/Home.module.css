@@ -1,7 +1,7 @@
 /* ── Hero ── */
 .hero {
   position: relative;
-  padding: 120px 48px 100px;
+  padding: 120px 48px 150px;
   text-align: left;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -82,7 +82,7 @@
 
 .name {
   font-family: var(--heading);
-  font-size: clamp(52px, 8vw, 112px);
+  font-size: clamp(36px, 5vw, 72px);
   font-weight: 300;
   font-style: italic;
   letter-spacing: -1px;
@@ -96,10 +96,71 @@
   font-weight: 600;
   font-style: normal;
   display: block;
-  background: linear-gradient(135deg, var(--text-h) 0%, var(--accent2) 100%);
+  background: linear-gradient(110deg,
+    var(--text-h) 0%,
+    var(--accent2) 30%,
+    var(--text-h) 55%,
+    var(--accent2) 80%,
+    var(--text-h) 100%);
+  background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+/* ── Marquee ticker ── */
+.ticker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+.tickerTrack {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.ticker:hover .tickerTrack {
+  animation-play-state: paused;
+}
+
+.tickerGroup {
+  display: inline-flex;
+}
+
+.tickerItem {
+  display: inline-flex;
+  align-items: center;
+}
+
+.tickerItem em {
+  font-family: var(--heading);
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+}
+
+.tickerItem:hover em {
+  color: var(--accent2);
+}
+
+.tickerStar {
+  font-size: 9px;
+  color: var(--accent-dim);
+  margin: 0 22px;
+  animation: borderPulse 3s ease-in-out infinite;
 }
 
 .ctas {
@@ -114,7 +175,13 @@
 .featuredList {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(232, 227, 213, 0.07);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(15, 14, 12, 0.45);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
 }
 
 .featuredItem {
@@ -144,7 +211,15 @@
 }
 
 .featuredItem:hover {
-  background: var(--bg2);
+  background: rgba(232, 227, 213, 0.035);
+}
+
+.featuredItem:hover .featuredBody {
+  transform: translateX(6px);
+}
+
+.featuredBody {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .featuredItem:hover::before {
@@ -289,9 +364,19 @@
   flex-direction: column;
   gap: 20px;
   padding: 28px;
-  background: var(--code-bg);
-  border: 1px solid var(--border-light);
+  background: rgba(17, 16, 9, 0.5);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(232, 227, 213, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
   position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.quickSkills:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.7), var(--glow);
 }
 
 .quickSkills::before {

@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Badge from "./Badge";
+import { useInView } from "../hooks/useInView";
 import styles from "./BlogCard.module.css";
 
 const ExternalIcon = () => (
@@ -9,12 +11,41 @@ const ExternalIcon = () => (
   </svg>
 );
 
-export default function BlogCard({ activity }) {
-  const { title, description, tags, date, emoji, accentColor, link } = activity;
+function Carousel({ images, title }) {
+  const [idx, setIdx] = useState(0);
+
+  const prev = (e) => { e.stopPropagation(); setIdx((i) => (i - 1 + images.length) % images.length); };
+  const next = (e) => { e.stopPropagation(); setIdx((i) => (i + 1) % images.length); };
 
   return (
-    <article className={styles.card}>
+    <div className={styles.carousel}>
+      <img src={images[idx]} alt={`${title} ${idx + 1}`} className={styles.thumbnailImg} />
+      <button className={`${styles.carouselBtn} ${styles.carouselPrev}`} onClick={prev} aria-label="Previous">‹</button>
+      <button className={`${styles.carouselBtn} ${styles.carouselNext}`} onClick={next} aria-label="Next">›</button>
+      <div className={styles.carouselDots}>
+        {images.map((_, i) => (
+          <span key={i} className={`${styles.dot} ${i === idx ? styles.dotActive : ""}`} onClick={(e) => { e.stopPropagation(); setIdx(i); }} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function BlogCard({ activity }) {
+  const { title, description, tags, date, emoji, accentColor, link, image, images } = activity;
+  const [ref, inView] = useInView();
+  const allImages = images ?? (image ? [image] : null);
+
+  return (
+    <article ref={ref} className={`${styles.card} reveal-scale ${inView ? "visible" : ""}`}>
       <div className={styles.accent} style={{ background: accentColor, boxShadow: `2px 0 12px ${accentColor}55` }} />
+      {allImages && allImages.length > 1 ? (
+        <Carousel images={allImages} title={title} />
+      ) : allImages?.length === 1 ? (
+        <div className={styles.thumbnail}>
+          <img src={allImages[0]} alt={title} className={styles.thumbnailImg} />
+        </div>
+      ) : null}
       <div className={styles.body}>
         <div className={styles.top}>
           <span className={styles.emoji}>{emoji}</span>

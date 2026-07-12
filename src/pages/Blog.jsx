@@ -6,6 +6,12 @@ import styles from "./Blog.module.css";
 
 const allTags = ["All", ...new Set(activities.flatMap((a) => a.tags))];
 
+const tagSubtitles = {
+  "All": "A collection of experiences, passions, and moments of discovery.",
+  "Straight Up Unreal": "Proof that the real world is wilder than fiction.",
+  "Violin": "Music, performances, and the journey of learning an instrument.",
+};
+
 export default function Blog() {
   const [activeTag, setActiveTag] = useState("All");
 
@@ -18,9 +24,9 @@ export default function Blog() {
     <PageLayout>
       <div className={styles.page}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Notebook</h1>
-          <p className={styles.subtitle}>
-            A collection of experiences, passions, and moments of discovery.
+          <h1 className={[styles.title, activeTag !== "All" ? styles.titleFiltered : ""].join(" ")}>Notebook</h1>
+          <p className={[styles.subtitle, activeTag !== "All" ? styles.subtitleFiltered : ""].join(" ")}>
+            {tagSubtitles[activeTag] ?? `Everything tagged "${activeTag}".`}
           </p>
         </div>
 

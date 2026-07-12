@@ -1,4 +1,5 @@
 import Badge from "./Badge";
+import { useInView } from "../hooks/useInView";
 import styles from "./ProjectCard.module.css";
 
 const ExternalIcon = () => (
@@ -17,9 +18,10 @@ const GitHubIcon = () => (
 
 export default function ProjectCard({ project }) {
   const { title, description, tags, github, live, accentColor } = project;
+  const [ref, inView] = useInView();
 
   return (
-    <article className={styles.card}>
+    <article ref={ref} className={`${styles.card} reveal-scale ${inView ? "visible" : ""}`}>
       <div className={styles.accent} style={{ background: accentColor, boxShadow: `2px 0 12px ${accentColor}55` }} />
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
