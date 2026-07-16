@@ -32,14 +32,18 @@ function Carousel({ images, title }) {
 }
 
 export default function BlogCard({ activity }) {
-  const { title, description, tags, date, emoji, accentColor, link, image, images } = activity;
+  const { title, description, tags, date, emoji, accentColor, link, image, images, video } = activity;
   const [ref, inView] = useInView();
   const allImages = images ?? (image ? [image] : null);
 
   return (
     <article ref={ref} className={`${styles.card} reveal-scale ${inView ? "visible" : ""}`}>
       <div className={styles.accent} style={{ background: accentColor, boxShadow: `2px 0 12px ${accentColor}55` }} />
-      {allImages && allImages.length > 1 ? (
+      {video ? (
+        <div className={styles.thumbnail}>
+          <video src={video} className={styles.thumbnailImg} controls playsInline />
+        </div>
+      ) : allImages && allImages.length > 1 ? (
         <Carousel images={allImages} title={title} />
       ) : allImages?.length === 1 ? (
         <div className={styles.thumbnail}>
