@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { profile } from "../data/profile";
 import styles from "./Nav.module.css";
 
@@ -6,16 +6,22 @@ const links = [
   { to: "/",        label: "Home"     },
   { to: "/projects",label: "Lab"      },
   { to: "/blog",    label: "Notebook" },
-  { to: "/about",   label: "About"    },
 ];
 
 const colorClasses = [styles.c0, styles.c1, styles.c2, styles.c3];
 
 export default function Nav() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <NavLink to="/" className={styles.logo}>
+        <NavLink
+          to="/"
+          className={styles.logo}
+          style={{ visibility: isHome ? "hidden" : "visible" }}
+        >
           {profile.name}
         </NavLink>
         <ul className={styles.links}>

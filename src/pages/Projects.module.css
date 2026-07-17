@@ -30,17 +30,17 @@
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 48px;
+  gap: 4px;
+  margin-bottom: 40px;
 }
 
 .filterBtn {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 6px 16px;
+  padding: 4px 11px;
   border: 1px solid rgba(232, 227, 213, 0.09);
   border-radius: 999px;
   background: rgba(15, 14, 12, 0.4);
