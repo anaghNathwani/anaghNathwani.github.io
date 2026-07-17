@@ -65,7 +65,7 @@ export default function BlogCard({ activity }) {
         {link && (
           <div className={styles.footer}>
             <a href={/^https?:\/\//.test(link) ? link : `https://${link}`} target="_blank" rel="noopener noreferrer" className={styles.link}>
-              <ExternalIcon /> Visit
+              <ExternalIcon /> this is what I built
             </a>
           </div>
         )}
