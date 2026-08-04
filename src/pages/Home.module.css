@@ -64,43 +64,31 @@
 
 .greeting {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--accent);
-  margin: 0 0 20px 0;
-  letter-spacing: 0.18em;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   padding-left: 28px;
 }
 
 .name {
   font-family: var(--heading);
-  font-size: clamp(22px, 3vw, 42px);
+  font-size: clamp(56px, 10vw, 120px);
   overflow: visible;
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: -1px;
-  line-height: 0.95;
-  margin: 0 0 36px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -3px;
+  line-height: 0.92;
+  margin: 0 0 48px;
   color: var(--text-h);
 }
 
 
 .nameBold {
-  font-weight: 600;
-  font-style: normal;
   display: block;
-  background: linear-gradient(110deg,
-    var(--text-h) 0%,
-    var(--accent2) 30%,
-    var(--text-h) 55%,
-    var(--accent2) 80%,
-    var(--text-h) 100%);
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 7s linear infinite;
+  color: var(--text-h);
 }
 
 /* ── Marquee ticker ── */
@@ -138,7 +126,7 @@
 
 .tickerItem em {
   font-family: var(--heading);
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 400;
   font-style: italic;
   color: var(--text-soft);
@@ -169,13 +157,17 @@
 .featuredList {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(232, 227, 213, 0.07);
+  border: 1px solid var(--glass-border);
   border-radius: 22px;
   overflow: hidden;
-  background: rgba(15, 14, 12, 0.45);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:
+    inset 0 1px 0 var(--glass-top),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 32px 72px -24px rgba(0, 0, 0, 0.75);
+  animation: glassReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 .featuredItem {
@@ -183,9 +175,13 @@
   grid-template-columns: 64px 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
-  transition: background 0.2s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
+}
+
+.featuredItem:hover {
+  box-shadow: inset 0 0 0 1px rgba(201, 145, 42, 0.08);
 }
 
 .featuredItem::before {
@@ -248,12 +244,12 @@
 
 .featuredTitle {
   font-family: var(--heading);
-  font-size: 22px;
+  font-size: 27px;
   font-weight: 600;
   font-style: italic;
   color: var(--text-h);
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.15;
   transition: color 0.15s;
 }
 
@@ -262,7 +258,7 @@
 }
 
 .featuredDesc {
-  font-size: 13.5px;
+  font-size: 15px;
   line-height: 165%;
   color: var(--text);
   margin: 0;
@@ -337,13 +333,12 @@
 }
 
 .bio {
-  font-size: 18px;
   line-height: 175%;
   color: var(--text);
   white-space: pre-line;
   margin: 0 0 32px;
   font-family: var(--heading);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 22px;
 }
 
@@ -358,19 +353,26 @@
   flex-direction: column;
   gap: 20px;
   padding: 28px;
-  background: rgba(17, 16, 9, 0.5);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(232, 227, 213, 0.08);
-  border-radius: 18px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
+  box-shadow:
+    inset 0 1px 0 var(--glass-top),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 8px 32px -12px rgba(0, 0, 0, 0.6);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .quickSkills:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.7), var(--glow);
+  transform: translateY(-5px);
+  box-shadow:
+    inset 0 1px 0 rgba(232, 227, 213, 0.2),
+    0 28px 60px -20px rgba(0, 0, 0, 0.85),
+    var(--glow);
 }
 
 .quickSkills::before {
@@ -421,7 +423,8 @@
     bottom: 72px;
   }
   .name {
-    font-size: clamp(26px, 7vw, 42px);
+    font-size: clamp(48px, 12vw, 80px);
+    letter-spacing: -2px;
   }
   .ctas {
     padding-left: 0;

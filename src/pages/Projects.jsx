@@ -18,9 +18,9 @@ export default function Projects() {
     <PageLayout>
       <div className={styles.page}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Things I've Built</h1>
+          <h1 className={styles.title}>The Workshop</h1>
           <p className={styles.subtitle}>
-            From quick experiments to real-world apps — everything I've made, shipped, or learned from.
+           A glimpse into the things I enjoy beyond school
           </p>
         </div>
 

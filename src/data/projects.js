@@ -6,7 +6,7 @@ export const projects = [
       "A full-stack web application built as my application to CCA's iGEM Software Team. Features a polished UI with React and Firebase on the backend for real-time data handling. Demonstrates my approach to frontend design, component architecture, and deploying production-ready apps.",
     tags: ["React", "Node.js", "Firebase", "Firestore"],
     github: "https://github.com/aNathwani44/Anagh-Nathwani-2026-cca-igem",
-    live: "https://anathwani44.github.io/Anagh-Nathwani-2026-cca-igem/",
+    link: "https://anathwani44.github.io/Anagh-Nathwani-2026-cca-igem/",
     featured: true,
     accentColor: "#aa3bff",
   },

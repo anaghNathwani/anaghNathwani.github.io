@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import Footer from "./Footer";
+import Tour from "./Tour";
 import styles from "./PageLayout.module.css";
 
 /**
@@ -15,6 +16,7 @@ export default function PageLayout({ children }) {
       <Nav />
       <main className={styles.main}>{children}</main>
       <Footer />
+      <Tour />
     </div>
   );
 }

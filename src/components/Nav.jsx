@@ -4,7 +4,7 @@ import styles from "./Nav.module.css";
 
 const links = [
   { to: "/",        label: "Home"     },
-  { to: "/projects",label: "Lab"      },
+  { to: "/projects",label: "Workshop"      },
   { to: "/blog",    label: "Notebook" },
 ];
 
@@ -16,11 +16,11 @@ export default function Nav() {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} data-tour="nav">
         <NavLink
           to="/"
           className={styles.logo}
-          style={{ visibility: isHome ? "hidden" : "visible" }}
+          style={{ display: isHome ? "none" : undefined }}
         >
           {profile.name}
         </NavLink>

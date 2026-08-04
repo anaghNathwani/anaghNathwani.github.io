@@ -72,7 +72,7 @@ export default function Home() {
       </div>
 
       {/* ── Featured Projects ── */}
-      <Section title="Featured Projects" id="projects" num="01">
+      <Section title="Featured Projects" id="projects" num="01" dataTour="projects">
         <div className={styles.featuredList}>
           {featured.map((project, i) => (
             <RevealItem key={project.id} delay={i * 80}>
@@ -105,7 +105,7 @@ export default function Home() {
       </Section>
 
       {/* ── About Snippet ── */}
-      <Section title="About Me" id="about" num="02">
+      <Section title="About Me" id="about" num="02" dataTour="about">
         <div className={styles.aboutSnippet}>
           <div
             ref={aboutRef}
