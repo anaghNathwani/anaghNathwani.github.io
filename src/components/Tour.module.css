@@ -183,13 +183,13 @@
 }
 
 .prev {
-  background: rgba(220, 228, 255, 0.06);
-  border: 1px solid rgba(220, 228, 255, 0.10);
+  background: var(--hairline-soft);
+  border: 1px solid var(--hairline);
   color: var(--text);
 }
 
 .prev:hover {
-  background: rgba(220, 228, 255, 0.11);
+  background: var(--hairline-med);
   transform: scale(1.04);
 }
 

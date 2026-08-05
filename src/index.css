@@ -26,6 +26,19 @@
   --glass-border:  rgba(220, 228, 255, 0.13);
   --glass-top:     rgba(220, 228, 255, 0.11);
 
+  /* Panel / hairline tokens shared by Nav, Tour, filter chips, etc. */
+  --panel-bg:            rgba(7, 8, 12, 0.62);
+  --panel-bg-strong:     rgba(7, 8, 13, 0.78);
+  --panel-bg-soft:       rgba(12, 11, 9, 0.38);
+  --hairline:            rgba(220, 230, 255, 0.12);
+  --hairline-soft:       rgba(220, 230, 255, 0.06);
+  --hairline-med:        rgba(220, 230, 255, 0.08);
+  --hairline-strong:     rgba(220, 230, 255, 0.14);
+  --warm-hairline:       rgba(232, 227, 213, 0.13);
+  --warm-hairline-soft:  rgba(232, 227, 213, 0.08);
+  --warm-hairline-med:   rgba(232, 227, 213, 0.4);
+  --ghost-stroke:        rgba(232, 227, 213, 0.11);
+
   --sans:    'Futura', 'Century Gothic', Trebuchet MS, sans-serif;
   --heading: 'Futura', 'Century Gothic', Trebuchet MS, sans-serif;
   --mono:    'Futura', 'Century Gothic', Trebuchet MS, sans-serif;
@@ -39,6 +52,47 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Light theme overrides ─────────────────────────── */
+:root[data-theme="light"] {
+  --bg:           #f6f3ec;
+  --bg2:          #ece7db;
+  --text:         #625d4f;
+  --text-h:       #211d13;
+  --text-soft:    #918c78;
+  --border:       #e2dcc9;
+  --border-light: #d2c9ae;
+  --code-bg:      #efe9d9;
+  --accent:       #a8681b;
+  --accent2:      #7d4e10;
+  --accent-dim:   #c98a2e;
+  --accent-bg:    rgba(168, 104, 27, 0.09);
+  --accent-border:rgba(168, 104, 27, 0.32);
+  --shadow:
+    rgba(60, 48, 22, 0.16) 0 12px 40px -8px,
+    rgba(60, 48, 22, 0.10) 0 4px 12px -2px;
+  --glow: 0 0 60px rgba(168, 104, 27, 0.14), 0 0 120px rgba(100, 120, 200, 0.05);
+
+  --glass-bg:      rgba(255, 253, 247, 0.62);
+  --glass-bg-hover:rgba(255, 253, 247, 0.80);
+  --glass-border:  rgba(40, 32, 14, 0.10);
+  --glass-top:     rgba(255, 255, 255, 0.65);
+
+  --panel-bg:            rgba(255, 253, 247, 0.68);
+  --panel-bg-strong:     rgba(255, 253, 247, 0.85);
+  --panel-bg-soft:       rgba(255, 253, 247, 0.55);
+  --hairline:            rgba(40, 32, 14, 0.12);
+  --hairline-soft:       rgba(40, 32, 14, 0.06);
+  --hairline-med:        rgba(40, 32, 14, 0.08);
+  --hairline-strong:     rgba(40, 32, 14, 0.16);
+  --warm-hairline:       rgba(40, 32, 14, 0.16);
+  --warm-hairline-soft:  rgba(40, 32, 14, 0.09);
+  --warm-hairline-med:   rgba(40, 32, 14, 0.4);
+  --ghost-stroke:        rgba(40, 32, 14, 0.10);
+
+  color-scheme: light;
 }
 
 /* ─── Animated border angle ─────────────────────────── */
@@ -257,6 +311,10 @@ body::after {
     radial-gradient(ellipse 34% 30% at 65% 24%, rgba(140, 130, 200, 0.09), transparent 65%),
     radial-gradient(ellipse 28% 22% at 10% 70%, rgba(80, 100, 180, 0.08), transparent 70%);
   animation: auroraDrift 32s ease-in-out infinite;
+}
+
+:root[data-theme="light"] body::after {
+  opacity: 0.55;
 }
 
 /* Grain overlay */

@@ -19,7 +19,7 @@
   font-size: clamp(120px, 18vw, 240px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(232, 227, 213, 0.11);
+  -webkit-text-stroke: 1px var(--ghost-stroke);
   pointer-events: none;
   user-select: none;
 }
