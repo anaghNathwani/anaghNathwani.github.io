@@ -10,7 +10,7 @@ const tagSubtitles = {
   "All": "A collection of experiences, passions, and moments of discovery.",
   "Straight Up Unreal": "Proof that the real world is wilder than fiction.",
   "Violin": "Music, performances, and the journey of learning an instrument.",
-  "Milestones": "The experiences that shaped how I think and who I am.",
+  "Chapters": "The experiences that shaped how I think and who I am.",
 };
 
 const monthOrder = {
@@ -57,25 +57,30 @@ export default function Blog() {
         </div>
 
         <div className={styles.filters}>
-          {allTags.map((tag) => (
-            <button
-              key={tag}
-              className={[
-                styles.filterBtn,
-                activeTag === tag ? styles.filterActive : "",
-              ].join(" ")}
-              onClick={() => setActiveTag(tag)}
+          <div className={styles.tagGroup}>
+            {allTags.map((tag) => (
+              <button
+                key={tag}
+                className={[
+                  styles.filterBtn,
+                  activeTag === tag ? styles.filterActive : "",
+                ].join(" ")}
+                onClick={() => setActiveTag(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+          {activeTag === "Violin" && (
+            <select
+              className={styles.sortSelect}
+              value={sortDir}
+              onChange={(e) => setSortDir(e.target.value)}
             >
-              {tag}
-            </button>
-          ))}
-          <button
-            className={styles.filterBtn}
-            onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
-            title="Toggle date sort"
-          >
-            {sortDir === "desc" ? "Newest first" : "Oldest first"}
-          </button>
+              <option value="desc">Newest first</option>
+              <option value="asc">Oldest first</option>
+            </select>
+          )}
         </div>
 
         <div className={styles.grid}>

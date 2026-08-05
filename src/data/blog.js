@@ -8,7 +8,7 @@ export const activities = [
     tags: ["Cooking"],
     date: "Jul 2026",
     accentColor: "#f59e0b",
-    link: "/Lemon Spaghetti with Roasted Chickpeas - Google Docs.pdf",
+    link: "https://docs.google.com/document/d/1r9FWIMtDYOfgR2IGK6XMjcFYTgSKkFi_2J47EWqvO-E/edit?usp=sharing",
     image: null,
   },
   {
@@ -20,7 +20,7 @@ export const activities = [
     tags: ["Cooking"],
     date: "Jul 2026",
     accentColor: "#ef4444",
-    link: "/Caprese Cottage Cheese toast - Google Docs.pdf",
+    link: "https://docs.google.com/document/d/1Tf80w9bAibRfiG6BhsFsgmLf5GsjqIOnqNZTdd05_7s/edit?usp=sharing",
     image: null,
   },
   {
@@ -32,7 +32,7 @@ export const activities = [
     tags: ["Cooking"],
     date: "Jul 2026",
     accentColor: "#84cc16",
-    link: "/Garlic Bread with Buttery Herb Magic - Google Docs.pdf",
+    link: "https://docs.google.com/document/d/1wm4QJAE1OIesV9kDg-3F_QHS4gIfDqcETGT8-fZVIaU/edit?usp=sharing",
     image: null,
   },
   {
@@ -41,7 +41,7 @@ export const activities = [
     title: "My Time at CTY JHU",
     description:
       "Johns Hopkins Center for Talented Youth (CTY) was one of the most formative experiences of my life. Surrounded by curious, driven peers and challenging coursework, I got a taste of what it really means to love learning.",
-    tags: ["Milestones"],
+    tags: ["Chapters"],
     date: "Jul 2026",
     accentColor: "#3b82f6",
     link: null,
