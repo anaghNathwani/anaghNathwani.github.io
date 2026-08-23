@@ -43,10 +43,14 @@ export default function Tour() {
 
   const current = STEPS[step];
 
-  // Auto-show on first visit
+  // Auto-show on first visit only — mark as seen the moment it appears so a
+  // refresh mid-tour (before Skip/Finish is clicked) doesn't retrigger it.
   useEffect(() => {
     if (!localStorage.getItem(TOUR_KEY)) {
-      const t = setTimeout(() => setActive(true), 800);
+      const t = setTimeout(() => {
+        setActive(true);
+        localStorage.setItem(TOUR_KEY, "1");
+      }, 800);
       return () => clearTimeout(t);
     }
   }, []);
